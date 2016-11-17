@@ -1,11 +1,6 @@
 class Fixnum
  define_method(:coin) do
-   numbers = {
-     "qaurters" => 0,
-     "dimes" => 0,
-     "nickels" => 0,
-     "pennies" => 0
-   }
+   numbers = {"qaurters" => 0,"dimes" => 0,"nickels" => 0,"pennies" => 0}
    counter = self
    until counter == 0
      if counter >= 25
@@ -26,6 +21,8 @@ class Fixnum
         counter -= number_p
      end
    end
-  numbers
+   numbers.each {|key, value|
+     puts "#{key} : #{value}"
+   }
  end
 end
